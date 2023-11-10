@@ -1,0 +1,23 @@
+spring:
+  application:
+    name: spring-study-todo
+  config:
+    additional-location: .env
+
+  datasource:
+    url: ${DATABASE_URL}
+    username: ${DATABASE_USERNAME}
+    password: ${DATABASE_PASSWORD}
+    driver-class-name: ${DATABASE_DRIVER}
+
+  jpa:
+    database-platform: ${DATABASE_PLATEFORM}
+    hibernate:
+      ddl-auto: create-drop
+    show-sql: true
+
+server:
+  port: 8075
+
+jwt:
+  secret: ${JWT_SECRET}

@@ -19,20 +19,8 @@ import io.jsonwebtoken.security.Keys;
 
 @Service
 public class JwtService {
+	String SECRET_KEY="dvgjbhkj551dzafrevc2663q2ds1d4e522sf5ss52dfd54df5qdffff";
 
-	@Autowired
-	private Environment environment;
-
-	public JwtService(Environment environment) {
-		this.environment = environment;
-	}
-
-	String SECRET_KEY;
-
-	@Autowired
-	public void init() {
-		SECRET_KEY = environment.getRequiredProperty("jwt.secret");
-	}
 
 	public String getToken(UserDetails user) {
 		return getToken(new HashMap<>(), user);

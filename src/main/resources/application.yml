@@ -5,13 +5,13 @@ spring:
     additional-location: .env
 
   datasource:
-    url: ${DATABASE_URL}
-    username: ${DATABASE_USERNAME}
-    password: ${DATABASE_PASSWORD}
-    driver-class-name: ${DATABASE_DRIVER}
+    url: jdbc:postgresql://localhost:5432/auth-springboot-demo
+    username: postgres
+    password: postgres
+    driver-class-name: org.postgresql.Driver
 
   jpa:
-    database-platform: ${DATABASE_PLATEFORM}
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
     hibernate:
       ddl-auto: create-drop
     show-sql: true
@@ -20,4 +20,4 @@ server:
   port: 8075
 
 jwt:
-  secret: ${JWT_SECRET}
+  secret: dvgjbhkj551dzafrevc2663q2ds1d4e522sf5ss52dfd54df5qdffff
